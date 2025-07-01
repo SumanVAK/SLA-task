@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Account</title>
+    <style>
+        .row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .group {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            padding: 8px;
+            font-size: 16px;
+        }
+        #email_box {
+            width: 600px;
+        }
+        #over_all{
+            border: 1px solid black;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
+
+
+        }
+       label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: rgb(43, 122, 109);
+}
+
+
+        body{
+            background-color: #4dc4bc;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div style="padding-top: 60px;">
+    <div style="width: 600px; padding-left: 30px; background-color: white; margin: 0 auto;" id="over_all" >
+        <h2 style="font-family: 'Times New Roman', Times, serif; color: white; text-align: center; background-color:rgb(43, 122, 109); height: 50px; padding-top: 10px; border-radius: 20px;">
+           Create Account 
+        </h2>
+
+        <form action="submit.html" method="post">
+            <div class="row">
+                <div class="group">
+                    <label>First Name</label>
+                    <input type="text" name="firstname" placeholder="Enter your first name">
+                </div>
+                <div class="group">
+                    <label>Last Name</label>
+                    <input type="text" name="lastname" placeholder="Enter your last name">
+                </div>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <label>Email</label><br>
+                <input type="email" name="email" placeholder="Enter your email" id="email_box"><br><br>
+            </div>
+            
+            <div class="row">
+                <div class="group">
+                    <label>Password</label>
+                    <input type="password" name="firstname" placeholder="Enter your password">
+                </div>
+                <div class="group">
+                    <label>Confirm Password</label>
+                    <input type="password" name="password" placeholder="Enter your password agin">
+                </div>
+            </div>
+
+            <div class="row" style="padding-top: 20px;">
+                <div>
+                     <label>Gender</label><br>
+<input type="radio" name="gender" value="male" id="male">
+<label for="male">Male</label>
+
+<input type="radio" name="gender" value="female" id="female">
+<label for="female">Female</label>
+
+                </div>
+        <div class="group" style="padding-left: 164px;">
+                    <div>
+
+                    
+    <label>Hobbies</label><br>
+
+    <input type="checkbox" name="hobbies" value="music" id="music">
+    <label for="music">Music</label>
+
+    <input type="checkbox" name="hobbies" value="sports" id="sports">
+    <label for="sports">Sports</label>
+
+    <input type="checkbox" name="hobbies" value="travel" id="travel">
+    <label for="travel">Travel</label>
+
+    <input type="checkbox" name="hobbies" value="movies" id="movies">
+    <label for="movies">Movies</label>
+</div>
+       </div>
+
+            </div>
+           
+
+        <div class="row" style="padding-top: 20px;">
+                <div class="group">
+                    <label>Source of Income</label>
+                    <select>
+                        <option value="employeed">Employed</option>
+                         <option value="unemployeed">unEmployed</option>
+                          <option value="self">Self</option>
+                           <option value="student">student</option>
+                    </select>
+                </div>
+                <div class="group">
+   <div class="row">
+
+       <div class="group">
+    <label>Income : </label></div>
+    <div class="group" style="margin-left: -190px;" >
+    <output id="incomeOutput">0</output></div> </div>
+    <input type="range" min="10000" max="120000" id="incomeRange" oninput="incomeOutput.value = incomeRange.value">
+    
+</div>
+
+            </div>
+
+
+
+         <div class="row">
+    <div class="group">
+        <label>Upload profile picture</label>
+        <input type="file" name="profile_picture">
+    </div>
+    <div class="group" style="margin-left: -60px;"> 
+        <label>Age</label>
+        <input type="number" name="age">
+    </div>
+</div>
+
+ <div style="margin-top: 20px;">
+                <label>Bio</label><br>
+                <textarea style="height: 70px; width: 600px;" >
+
+                </textarea><br><br>
+<div style="display: flex; justify-content: flex-end; width: 100%;">
+  <button type="submit" style="width: 90px; height: 40px; background-color: rgb(43, 122, 109); font-size: 16px; color: white; border-radius: 100px;">Create</button>
+</div>
+
+        </form>
+    </div>
+    </div>
+</body>
+</html>
