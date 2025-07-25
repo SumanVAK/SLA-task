@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Check Largest Number</title>
+</head>
+<style>
+    body {
+         font-family: Arial, sans-serif;
+         background-color: #f0f4f8;
+         padding: 20px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: 100vh;
+      }
+
+      div {
+         background-color: #ffffff;
+         padding: 30px;
+         border-radius: 10px;
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+         width: 300px;
+      }
+
+      h2 {
+         text-align: center;
+         color: #333;
+      }
+
+      h4 {
+         margin: 10px 0 5px;
+         color: #555;
+      }
+
+      input[type="number"] {
+         width: 100%;
+         padding: 8px;
+         margin-bottom: 10px;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+         font-size: 16px;
+      }
+
+      button {
+         width: 100%;
+         padding: 10px;
+         background-color: #007BFF;
+         color: white;
+         border: none;
+         border-radius: 5px;
+         font-size: 16px;
+         cursor: pointer;
+         transition: background-color 0.3s;
+      }
+
+      button:hover {
+         background-color: #0056b3;
+      }
+
+      #result {
+         margin-top: 15px;
+         font-weight: bold;
+         text-align: center;
+         color: #2c3e50;
+      }
+</style>
+<body>
+
+ <div>
+  <h2>Check the Largest of Three Numbers</h2>
+   <h4>1<sup>st</sup> Number:</h4>
+   <input type="number" id="num1">
+
+   <h4>2<sup>nd</sup> Number:</h4>
+   <input type="number" id="num2">
+
+   <h4>3<sup>rd</sup> Number:</h4>
+   <input type="number" id="num3"><br><br>
+
+   <button id="check" onclick="checknum()">Check</button>
+   <p id="result"></p>
+ </div>
+
+<script>
+   function checknum() {
+      
+       let num1 = parseFloat(document.getElementById("num1").value);
+       let num2 = parseFloat(document.getElementById("num2").value);
+       let num3 = parseFloat(document.getElementById("num3").value);
+       let result = document.getElementById("result");
+
+      
+       if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+           result.innerText = "Please enter all three numbers.";
+           return;
+       }
+
+       
+       let largest = Math.max(num1, num2, num3);
+
+       result.innerText = "The largest number is: " + largest;
+   }
+</script>
+</body>
+</html>
