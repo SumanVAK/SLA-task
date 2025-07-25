@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Calculator</title>
+  <style>
+    div {
+      border: 1px solid black;
+      margin: 75px auto;
+      padding: 20px;
+      text-align: center;
+      width: 250px;
+      border-radius: 20px;
+      box-shadow:0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    #clear {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h4>1<sup>st</sup> Number:</h4>
+    <input type="number" id="num1">
+    <h4>2<sup>nd</sup> Number:</h4>
+    <input type="number" id="num2"><br><br>
+
+    <button onclick="mul()">Multiply</button> &ensp;
+    <button onclick="divi()">Divide</button>
+
+    <h4>Result:</h4>
+    <h2 id="ans"></h2>
+
+    <button id="clear" onclick="clearFields()">Clear</button>
+  </div>
+
+  <script>
+    function mul() {
+      const num1 = parseFloat(document.getElementById("num1").value);
+      const num2 = parseFloat(document.getElementById("num2").value);
+      if (isNaN(num1) || isNaN(num2)) {
+        document.getElementById("ans").innerHTML = "Please enter both numbers";
+      } else {
+        document.getElementById("ans").innerHTML = num1 * num2;
+      }
+      document.getElementById("clear").style.display = "inline";
+    }
+
+    function divi() {
+      const num1 = parseFloat(document.getElementById("num1").value);
+      const num2 = parseFloat(document.getElementById("num2").value);
+      let result;
+      if (isNaN(num1) || isNaN(num2)) {
+        result = "Please enter both numbers";
+      } else if (num2 === 0) {
+        result = "Cannot divide by zero";
+      } else {
+        result = num1 / num2;
+      }
+      document.getElementById("ans").innerHTML = result;
+      document.getElementById("clear").style.display = "inline";
+    }
+
+    function clearFields() {
+      document.getElementById("num1").value = "";
+      document.getElementById("num2").value = "";
+      document.getElementById("ans").innerHTML = "";
+      document.getElementById("clear").style.display = "none";
+    }
+  </script>
+</body>
+</html>
