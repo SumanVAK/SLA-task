@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<style>
+
+div{
+border: 1px solid black;
+      margin: 75px auto;
+      padding: 20px;
+      text-align: center;
+      width: 250px;
+      border-radius: 20px;
+      box-shadow:0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+</style>
+<body>
+   <div>
+   <h1>Enter the text to check</h1>
+   <input type="text" id="tt">
+   <button onclick="checkstr()">Check</button><br><br>
+   <h2>Result: </h2><h2 id="ans"></h2>
+   </div>
+</body>
+<script>
+function checkstr() {
+    let text = document.getElementById("tt").value;
+    let target = "script";
+    let index = text.indexOf(target);
+
+    while (index !== -1) {
+        
+        text = text.slice(0, index) + text.slice(index + target.length);
+        index = text.indexOf(target); 
+    }
+
+    document.getElementById("ans").textContent = text;
+}
+</script>
+</html>
